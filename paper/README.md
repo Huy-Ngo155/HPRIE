@@ -1,19 +1,19 @@
 # HPRIE Technical Paper
 
-[cite_start]This directory contains the formal research documentation for **HPRIE: A NUMA-Aware Lock-Free Inference Engine for Low-Latency AI Serving**[cite: 1, 122].
+This directory contains the formal research documentation for **HPRIE: A NUMA-Aware Lock-Free Inference Engine for Low-Latency AI Serving**.
 
 ## 📄 Read the Paper
-Click the link below to view or download the full technical paper (Standard 2-column academic format):
+Click the link below to view or download the full technical paper:
 - [**Download Technical Paper (PDF)**](./HPRIE_Technical_Paper.pdf)
 
 ## 📌 Abstract
-[cite_start]AI inference serving in production is often constrained by systems-level bottlenecks such as lock contention and non-uniform memory access (NUMA) effects[cite: 4, 127]. [cite_start]HPRIE integrates classical systems programming techniques—lock-free concurrency, explicit memory ordering, and NUMA-aware scheduling—into the inference pipeline[cite: 6, 128]. [cite_start]It is designed to provide predictable low-latency behavior under high contention[cite: 7, 129].
+[cite_start]AI inference serving in production environments is constrained by systems-level bottlenecks such as lock contention and non-uniform memory access (NUMA) effects[cite: 6]. [cite_start]HPRIE integrates lock-free concurrency, explicit memory ordering, and NUMA-aware scheduling to provide predictable low-latency behavior under contention[cite: 7, 8].
 
 ## 🛠 Key Technical Contributions
-- [cite_start]**NUMA-Aware Architecture**: Optimized for multi-core server environments by explicitly binding worker threads and memory pools to specific NUMA nodes[cite: 17, 41, 142].
-- [cite_start]**Lock-Free MPMC Pipeline**: Implements a Multi-Producer Multi-Consumer task queue using C++ atomics to eliminate kernel transitions and priority inversion[cite: 18, 46, 145].
-- [cite_start]**Formal Progress Guarantees**: The core components satisfy **Linearizability** and **Lock-Freedom**, ensuring system-wide progress regardless of individual thread delays[cite: 87, 89, 90, 148].
-- [cite_start]**Predictable P99 Latency**: Specifically engineered to stabilize tail latency by removing coarse-grained locks and reducing cross-NUMA memory traffic[cite: 67, 81, 146].
+- [cite_start]**NUMA-Aware Architecture**: Optimized for multi-core server environments by preserving memory locality on multi-socket systems[cite: 14, 17].
+- [cite_start]**Lock-Free MPMC Pipeline**: Utilizes Multi-Producer Multi-Consumer queues implemented with C++ atomic primitives to eliminate kernel transitions and reduce tail latency (P99)[cite: 20, 24, 25].
+- [cite_start]**Formal Progress Guarantees**: The system architecture satisfies **Linearizability** and **Lock-Freedom**, ensuring continuous progress without the "convoy effects" common in mutex-based systems[cite: 27, 28].
+- [cite_start]**Predictable Latency**: Specifically designed to treat inference serving as a systems-level resource management problem to maintain stability under load spikes[cite: 11, 16].
 
 ---
-[cite_start]*Authored by Huy Ngo (Independent Researcher)* [cite: 2, 125]
+*Authored by Huy Ngo (Independent Researcher)*
