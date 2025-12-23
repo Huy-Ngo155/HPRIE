@@ -4,8 +4,7 @@ This directory contains the formal research paper for **HPRIE: A NUMA-Aware Lock
 
 ## 📄 Read the Paper
 Click the link below to view the full PDF:
-- [**Download Technical Paper (PDF)**](./HPRIE__A_NUMA_Aware_Lock_Free_Inference_Engine_for_Low_Latency_AI_Serving.pdf)
-
+- [**Download Technical Paper (PDF)**](HPRIE__A_NUMA_Aware_Lock_Free_Inference_Engine_for_Low_Latency_AI_Serving.pdf)
 ## 📌 Abstract
 AI inference serving in production environments is constrained by systems-level bottlenecks such as lock contention and non-uniform memory access (NUMA) effects. [cite_start]This paper presents **HPRIE**, a high-performance inference engine integrating lock-free concurrency, explicit memory ordering, and NUMA-aware scheduling. [cite: 4, 6]
 
